@@ -1,0 +1,14 @@
+table {
+  margin: auto;
+  margin-top: 50px;
+}
+
+.header {
+  border: 1px solid black;
+  display: grid;
+  grid-template-columns: 300px 200px;
+  gap: 60px;
+  font-weight: 600;
+  padding-left: 30px;
+  padding-right: 30px;
+}

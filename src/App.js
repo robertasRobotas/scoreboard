@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { Table } from "./components/table/table";
+import { DataInput } from "./components/dataInput/dataInput";
+import img from "./assets/epamLogo.png";
+import styles from "./app.module.css";
+import { useState } from "react";
 
 function App() {
+  const [users, setUsers] = useState([
+    { name: "Robertas Ankudovicius", scoreTime: "2min 34sec" },
+    { name: "Marius Matulevicius", scoreTime: "2min 36sec" },
+    { name: "Tomas Tomauskas", scoreTime: "3min 14sec" },
+    { name: "Ruta Davidav", scoreTime: "3min 56sec" },
+  ]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <div className={styles.logoWrapper}>
+        <img alt="logo" className={styles.logo} src={img} />
+      </div>
+      <Table users={users} />
+      <DataInput setUsers={setUsers} />
     </div>
   );
 }
