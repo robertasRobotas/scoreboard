@@ -1,10 +1,23 @@
+input {
+  text-align: center;
+}
+
 .inputWrapper {
   margin: auto;
-  margin-top: 50px;
+  margin-top: 70px;
   display: grid;
   grid-template-columns: 300px 200px;
   gap: 30px;
   width: 560px;
+}
+
+.timeInputWrapper {
+  display: flex;
+  gap: 40px;
+}
+
+.timeInputWrapper input {
+  width: 100px;
 }
 
 .inputButton {

@@ -3,22 +3,30 @@ import styles from "./table.module.css";
 
 export const Table = ({ users }) => {
   return (
-    <table>
-      <thead>
-        <div className={styles.header}>
-          <div>Name</div>
-          <div>Score</div>
-        </div>
-      </thead>
-      <tbody>
-        {users.map((user) => {
+    <div className={styles.table}>
+      <div className={styles.header}>
+        <div>Name</div>
+        <div>Score</div>
+      </div>
+      {users
+        .sort((userA, userB) => {
           return (
-            <>
-              <TableRow name={user.name} scoreTime={user.scoreTime} />
-            </>
+            userA.minutesScore * 60 +
+            userA.secondsScore -
+            (userB.minutesScore * 60 + userB.secondsScore)
+          );
+        })
+        .map((user) => {
+          return (
+            <span key={`${user.name}`}>
+              <TableRow
+                name={user.name}
+                minutesScore={user.minutesScore}
+                secondsScore={user.secondsScore}
+              />
+            </span>
           );
         })}
-      </tbody>
-    </table>
+    </div>
   );
 };
