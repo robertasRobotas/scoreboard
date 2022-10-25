@@ -1,13 +1,16 @@
 import styles from "./dataInput.module.css";
 import { useEffect, useState } from "react";
+import { v1 as uuidv1 } from "uuid";
 
 export const DataInput = ({ users, setUsers }) => {
   const [name, setName] = useState("");
   const [minutesScore, setMinutesScore] = useState();
   const [secondsScore, setSecondsScore] = useState();
+  const id = uuidv1();
 
   const addUser = () => {
     const newData = {
+      id: id,
       name: name,
       minutesScore: Number(minutesScore),
       secondsScore: Number(secondsScore),

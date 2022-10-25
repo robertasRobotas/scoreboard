@@ -18,13 +18,13 @@ export const Table = ({ users }) => {
         })
         .map((user) => {
           return (
-            <span key={`${user.name}`}>
+            <div className={styles.rowWrapper} key={`${user.name}${user.id}`}>
               <TableRow
                 name={user.name}
                 minutesScore={user.minutesScore}
                 secondsScore={user.secondsScore}
               />
-            </span>
+            </div>
           );
         })}
     </div>

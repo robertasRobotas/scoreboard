@@ -5,13 +5,7 @@ import styles from "./app.module.css";
 import { useState, useEffect } from "react";
 
 function App() {
-  const [users, setUsers] = useState([
-    { name: "xx Davidav", minutesScore: 2, secondsScore: 14 },
-    { name: "Robertas Ankudovicius", minutesScore: 1, secondsScore: 39 },
-    { name: "Marius Matulevicius", minutesScore: 1, secondsScore: 56 },
-    { name: "Tomas Tomauskas", minutesScore: 2, secondsScore: 19 },
-    { name: "Ruta Davidav", minutesScore: 2, secondsScore: 38 },
-  ]);
+  const [users, setUsers] = useState([]);
 
   const existingUsersData = localStorage.getItem("results");
 

@@ -1,7 +1,17 @@
+@keyframes example {
+  from {
+    background-color: rgb(90, 106, 223);
+  }
+  to {
+    background-color: white;
+  }
+}
+
 .table {
   margin: auto;
   margin-top: 50px;
   width: 700px;
+  transition: 0.5s;
 }
 
 .header {
@@ -12,4 +22,10 @@
   font-weight: 600;
   padding-left: 30px;
   padding-right: 30px;
+}
+
+.rowWrapper {
+  transition: 1s;
+  animation-name: example;
+  animation-duration: 5s;
 }
